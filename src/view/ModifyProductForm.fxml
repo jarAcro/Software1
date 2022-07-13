@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="652.0" prefWidth="951.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyProductFormController">
+    <children>
+        <Button layoutX="774.0" layoutY="304.0" mnemonicParsing="false" onAction="#onActionModProductAddButtonClicked" prefHeight="25.0" prefWidth="61.0" text="Add" />
+        <Button layoutX="743.0" layoutY="561.0" mnemonicParsing="false" onAction="#onActionRemoveAssociatedPartButtonClicked" prefHeight="25.0" prefWidth="153.0" text="Remove Associated Part" />
+        <Button layoutX="752.0" layoutY="597.0" mnemonicParsing="false" onAction="#onActionModProductSaveButtonClicked" prefHeight="25.0" prefWidth="61.0" text="Save" />
+        <Button layoutX="831.0" layoutY="597.0" mnemonicParsing="false" onAction="#onActionReturnMainMenu" prefHeight="25.0" prefWidth="68.0" text="Cancel" />
+        <Label layoutX="75.0" layoutY="61.0" prefHeight="21.0" prefWidth="153.0" text="Modify Product">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <TableView fx:id="modProductTopTable" layoutX="528.0" layoutY="98.0" prefHeight="200.0" prefWidth="371.0">
+            <columns>
+                <TableColumn fx:id="modProductTopTableIDCOL" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="modProductTopTableNameCOL" prefWidth="75.0" text="Part Name" />
+                <TableColumn fx:id="modProductTopTableInvCOL" prefWidth="102.0" text="Inventory Level" />
+                <TableColumn fx:id="modProductTopTablePriceCOL" prefWidth="117.0" text="Price/ Cost per Unit" />
+            </columns>
+        </TableView>
+        <TableView fx:id="modProductBottomTable" layoutX="528.0" layoutY="350.0" prefHeight="200.0" prefWidth="371.0">
+            <columns>
+                <TableColumn fx:id="modProductBottomTableIDCOL" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="modProductBottomTableNameCOL" prefWidth="75.0" text="Part Name" />
+                <TableColumn fx:id="modProductBottomTableInvCOL" prefWidth="95.0" text="Inventory Level" />
+                <TableColumn fx:id="modProductBottomTablePriceCOL" prefWidth="125.0" text="Price/ Cost per Unit" />
+            </columns>
+        </TableView>
+        <GridPane layoutX="28.0" layoutY="152.0" prefHeight="304.0" prefWidth="400.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="57.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="143.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="68.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="132.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TextField fx:id="ModProductIDTXT" disable="true" editable="false" promptText="Auto Generated - Disabled" text="Auto Generated - Disabled" GridPane.columnIndex="1" />
+                <TextField fx:id="modProductNameTXT" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="modProductInvTXT" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="modProductPriceTXT" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="modProductMaxTXT" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="modProductMinTXT" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                <Label text="ID" />
+                <Label text="Name" GridPane.rowIndex="1" />
+                <Label text="Inv" GridPane.rowIndex="2" />
+                <Label text="Price" GridPane.rowIndex="3" />
+                <Label text="Max" GridPane.rowIndex="4" />
+                <Label text="Min" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                    <padding>
+                        <Insets left="26.0" />
+                    </padding>
+                </Label>
+            </children>
+        </GridPane>
+        <TextField fx:id="modProductSearchTXT" layoutX="739.0" layoutY="59.0" onAction="#onActionSearchModProduct" prefHeight="25.0" prefWidth="160.0" promptText="Search by Part ID or Name" />
+    </children>
+</AnchorPane>
